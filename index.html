@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laudo de Exame Otorrinolaringológico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="report-container">
+        <!-- Header -->
+        <header class="report-header">
+            <div class="header-left">
+                <img src="logo.jpg" id="clinic-logo" alt="Logotipo da Clínica">
+                <div class="clinic-info">
+                    <h1>Clínica de Otorrinolaringologia</h1>
+                    <p>Dr. [Seu Nome Aqui]</p>
+                    <p>CRM: [Seu CRM] | RQE: [Seu RQE]</p>
+                </div>
+            </div>
+            <div class="report-date">
+                <p>Data: <span id="current-date"></span></p>
+            </div>
+        </header>
+
+        <!-- Patient Info -->
+        <section class="patient-info">
+            <h2>Dados do Paciente</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="patient-name">Nome do Paciente:</label>
+                    <input type="text" id="patient-name" placeholder="Nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="patient-age">Idade:</label>
+                    <input type="number" id="patient-age" placeholder="Idade">
+                </div>
+                <div class="form-group">
+                    <label for="exam-type">Tipo de Exame:</label>
+                    <select id="exam-type">
+                        <option value="">Selecione o tipo de exame</option>
+                        <option value="video-endoscopia">Vídeo-Endoscopia Nasossinusal</option>
+                        <option value="video-naso-faringo">Vídeo-Naso-Faringo-Laringoscopia</option>
+                        <option value="video-laringoestroboscopia">Vídeo-Laringoestroboscopia</option>
+                        <option value="video-faringoscopia">Vídeo-Faringoscopia do Esfíncter Velo-Faríngeo</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exam Description -->
+        <section class="exam-description">
+            <h2>Descrição do Exame</h2>
+            <textarea id="exam-text" rows="10" placeholder="Descreva os achados do exame aqui..."></textarea>
+            <div id="exam-text-print" class="print-only"></div>
+        </section>
+
+        <!-- Signature Section (Repositioned) -->
+        <div class="signature-section">
+            <div class="signature-line"></div>
+            <p class="doctor-name">Dr. [Seu Nome Aqui]</p>
+            <p class="doctor-crm">Otorrinolaringologista - CRM/UF: [00000]</p>
+        </div>
+
+        <!-- Media Capture Section (Hidden in Print) -->
+        <section class="media-capture no-print">
+            <h2>Captura de Imagens e Vídeo</h2>
+
+            <div class="camera-controls">
+                <div class="video-preview-container">
+                    <video id="camera-feed" autoplay playsinline></video>
+                    <button id="capture-btn" class="btn primary">Capturar Foto</button>
+                </div>
+
+                <div class="upload-controls">
+                    <label for="image-upload" class="btn secondary">Adicionar Imagem do Arquivo</label>
+                    <input type="file" id="image-upload" accept="image/*" multiple style="display: none;">
+                </div>
+
+                <div class="video-upload-container">
+                    <label for="youtube-link" class="input-label">Link do Vídeo (YouTube):</label>
+                    <input type="text" id="youtube-link" placeholder="Cole o link do YouTube aqui..."
+                        class="text-input">
+                </div>
+            </div>
+        </section>
+
+        <!-- Images Gallery (Visible in Print) -->
+        <section class="images-gallery">
+            <h2>Imagens do Exame</h2>
+            <div id="photo-grid" class="photo-grid">
+                <!-- Photos will be added here dynamically -->
+            </div>
+        </section>
+
+        <!-- Video Section (YouTube Embed & QR Code) -->
+        <section class="video-section" id="video-section" style="display: none;">
+            <h2>Vídeo do Exame</h2>
+            <div class="video-content">
+                <div id="video-preview">
+                    <!-- Iframe will be inserted here -->
+                </div>
+                <div class="qr-code-container">
+                    <p>Escaneie para assistir:</p>
+                    <div id="qrcode"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actions (Hidden in Print) -->
+        <div class="actions no-print">
+            <button id="print-btn" class="btn primary">Imprimir / Salvar PDF</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

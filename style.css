@@ -1,0 +1,358 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-gray: #f5f6fa;
+    --border-color: #ddd;
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: #eef2f7;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.report-container {
+    max-width: 210mm;
+    /* A4 width */
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    min-height: 297mm;
+    /* A4 height */
+}
+
+/* Header */
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#clinic-logo {
+    max-height: 80px;
+    width: auto;
+}
+
+.clinic-info h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.clinic-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Sections */
+section {
+    margin-bottom: 25px;
+    page-break-inside: avoid;
+}
+
+.images-gallery {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+h2 {
+    font-size: 18px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Forms */
+.form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+select {
+    cursor: pointer;
+    background-color: white;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+/* Signature Section */
+.signature-section {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+.signature-line {
+    width: 300px;
+    height: 1px;
+    background: #333;
+    margin: 0 auto 10px;
+}
+
+/* Media Capture */
+.camera-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background: var(--light-gray);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.video-preview-container {
+    width: 100%;
+    max-width: 640px;
+    position: relative;
+}
+
+video#camera-feed {
+    width: 100%;
+    border-radius: 4px;
+    background: #000;
+}
+
+.upload-controls {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.video-upload-container {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    font-size: 14px;
+}
+
+.btn.primary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #2980b9;
+}
+
+.btn.secondary {
+    background-color: #95a5a6;
+    color: white;
+    display: inline-block;
+}
+
+.btn.secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* Photo Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.photo-item {
+    position: relative;
+    border: 1px solid var(--border-color);
+    padding: 5px;
+    background: white;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.remove-photo {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* Video Preview */
+#uploaded-video-preview {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+/* Actions */
+.actions {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .report-container {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: none;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .remove-photo {
+        display: none !important;
+    }
+
+    input {
+        border: none;
+        padding: 0;
+    }
+
+    textarea {
+        display: none;
+    }
+
+    .print-only {
+        display: block !important;
+        white-space: pre-wrap;
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 1.6;
+        border: none;
+        padding: 0;
+        color: black;
+    }
+
+    #video-preview {
+        display: none;
+        /* Hide video player in print */
+    }
+
+    .qr-code-container {
+        display: block !important;
+        text-align: center;
+        width: 100%;
+    }
+
+    .qr-code-container p {
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
+
+/* Screen styles for Video/QR */
+.video-content {
+    margin-top: 15px;
+}
+
+.qr-code-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.print-only {
+    display: none;
+}
