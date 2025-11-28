@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -74,7 +76,7 @@
 
             <div class="camera-controls">
                 <div class="video-preview-container">
-                    <video id="camera-feed" autoplay playsinline></video>
+                    <video id="camera-feed" autoplay playsinline"></video>
                     <button id="capture-btn" class="btn primary">Capturar Foto</button>
                 </div>
 
@@ -103,11 +105,11 @@
         <section class="video-section" id="video-section" style="display: none;">
             <h2>Vídeo do Exame</h2>
             <div class="video-content">
-                <div id="video-preview">
+                <div id="video-preview" class="no-print">
                     <!-- Iframe will be inserted here -->
                 </div>
                 <div class="qr-code-container">
-                    <p>Escaneie para assistir:</p>
+                    <p>Escaneie o QR code para assistir o vídeo:</p>
                     <div id="qrcode"></div>
                 </div>
             </div>
