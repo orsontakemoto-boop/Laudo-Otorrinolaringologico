@@ -10,11 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const examTemplates = {
         'video-endoscopia': `Equipamento:
-·Nasofibrolaringoscópio Scott-Electronics NasoFlex 100K
-·Microcâmera Olympus OTV-S7-ProH-HD-12E
-·Processador de Imagem Olympus Visera OTV-S7Pro
-·Fonte de Luz Xenon Olympus Visera CLV-S40Pro
-·Videoendoscópio Chip-on-the-tip Olympus Enf-V
+·Microcâmera Olympus CH-S190-XZ
+·Processador de Imagem Olympus Visera OTV-S190
+·Fonte de Luz Xenon Olympus Visera CLV-S190
+·Videoendoscópio Olympus Enf-V2
 
 Preparo: 
 ·Retração de corneto com Cloridrato de Oximetazolina
@@ -34,10 +33,9 @@ Exame Endoscópico:
 
 Conclusão: Exame compatível com a normalidade.`,
         'video-naso-faringo': `Equipamento:
-·Nasofibrolaringoscópio Scott-Electronics NasoFlex 100K
-·Processador de Imagem Olympus Visera OTV-S7Pro
-·Fonte de Luz Xenon Olympus Visera CLV-S40Pro
-·Videoendoscópio Chip-on-the-tip Olympus Enf-V
+·Videoendoscópio Olympus Enf-V2
+·Processador de Imagem Olympus Visera OTV-S190
+·Fonte de Luz Xenon Olympus Visera CLV-S190
 
 Preparo: 
 ·Retração de corneto com Cloridrato de Oximetazolina
@@ -67,13 +65,12 @@ Laringoscopia:
 ·Comissura posterior: de aspecto normal
 
 Conclusão: Exame compatível com a normalidade.`,
-        'video-laringoestroboscopia': `Equipamento: Videolaringoestroboscópio, Ótica Rígida de 70°, Modelo Scott LC-960.
-·Microcâmera Olympus OTV-S7-ProH-HD-12E
-·Processador de Imagem Olympus Visera OTV-S7Pro
-·Fonte de Luz StroboLed Ecleris
-·Videoendoscópio Chip-on-the-tip Olympus Enf-V
-·Laringoscópio Jedmed 10 mm 70°, Modelo 49-4074 
-·Laringoscópio 6mm 90º
+        'video-laringoestroboscopia': `Equipamento: 
+·Microcâmera Olympus CH-S190-XZ
+·Processador de Imagem Olympus Visera OTV-S190
+·Fonte de Luz Xenon Olympus Visera CLV-S190
+·Videoendoscópio Olympus Enf-V2
+·Laringoscópio Storz 10 mm 70°
 
 Preparo: Anestesia tópica com tetracaína 2%.
 
@@ -98,15 +95,23 @@ Aspectos Funcionais:
 ·Observações supra-glóticas: As pregas ventriculares bilaterais vibram / A região aritenóide esquerda apresenta vibração / A região aritenóide direita e a base da epiglote apresentam vibração irregular / Toda a estrutura glótica vibra / As estruturas supra-glóticas se contraem
 
 Conclusão: Exame dentro da normalidade / Normal / Laringite Aguda / Laringite Crônica / Hemorragia Subepitelial da Prega Vocal / Nódulos de Prega Vocal / Pólipo de Prega Vocal / Edema de Reinke / Cisto de Prega Vocal / Sulco Vocal / Cicatriz da Prega Vocal / Membrana Laríngea / Displasia da Prega Vocal / Papiloma da Prega Vocal / Carcinoma da Prega Vocal / Paralisia do Nervo Laríngeo Recorrente / Hipertrofia ou Massa da Prega Ventricular / Prolapso do Ventrículo / Disfonia Hipercinética / Disfonia Hipocinética / Disfonia Espamódica.`,
-        'video-faringoscopia': `Equipamento Utilizado: [Ex: Nasofibroscópio flexível Olympus/Pentax]
+        'video-faringoscopia': `Equipamento Utilizado: 
+
+·Microcâmera Olympus CH-S190-XZ
+·Processador de Imagem Olympus Visera OTV-S190
+·Fonte de Luz Xenon Olympus Visera CLV-S190
+·Videoendoscópio Olympus Enf-V2
+
 História Clínica:
 [Breve resumo da queixa principal, como hipernasalidade na fala, escape de ar nasal, dificuldades na deglutição, ou histórico de fissura labiopalatina, etc.]
 Descrição do Procedimento:
 O exame foi realizado por via nasal com nasofibroscópio flexível, sob anestesia tópica (se utilizada), com o paciente em posição [sentada/supina]. Foram observadas as estruturas da nasofaringe, orofaringe e hipofaringe durante a respiração e a fonação de estímulos específicos (vogais, frases, contagem) e, se aplicável, durante a deglutição de diferentes consistências (líquido, pastoso, sólido).
+
 Achados Anatômicos:
 Palato Mole (Véu Palatino): [Descrever tamanho, forma, simetria, presença de cicatrizes, fístulas ou outras anomalias].
 Paredes Laterais e Posterior da Faringe: [Descrever a movimentação e a presença de coaptação (fechamento) simétrica].
 Tonsilas Palatinas e Adenoides: [Descrever tamanho e se interferem na movimentação ou no espaço velofaríngeo].
+
 Achados Funcionais (Avaliação do Fechamento Velofaríngeo):
 Em Repouso e Respiração Nasal: [Descrever se o esfíncter permanece aberto, o que é normal].
 Durante a Fonação:
@@ -114,10 +119,12 @@ Fechamento: Descrever se o fechamento é completo, incompleto (mínimo, pequeno,
 Escape de ar nasal: Observado durante a fonação de quais sons/frases.
 Movimentação: Descrever a elevação do palato mole e a movimentação das paredes laterais e posterior.
 Durante a Deglutição (se avaliada): [Descrever se há vedamento adequado, presença de penetração laríngea ou aspiração, resíduos faríngeos, etc.]
+
 Impressão Diagnóstica / Conclusão:
 [Ex: Fechamento velofaríngeo funcionalmente adequado, sem escape de ar nasal e sem sinais de incoordenação velofaríngea].
 [Ex: Disfunção velofaríngea (insuficiência/incompetência/incoordenação) caracterizada por gap velofaríngeo de aproximadamente [X] mm durante a fonação da vogal /a/, predominantemente por falha na elevação do palato mole].
 [Ex: Presença de microaspiração para líquidos finos devido à falha no vedamento velofaríngeo].
+
 Conduta/Sugestões:
 [Ex: Sugere-se avaliação fonoaudiológica detalhada, fonoterapia, discussão em equipe multiprofissional, ou indicação cirúrgica, etc`
     };
