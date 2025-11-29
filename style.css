@@ -1,3 +1,27 @@
+/* header-text: substitui o layout do logo */
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 24px;
+  color: var(--primary-color, #1a365d);
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-transform: none;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #4a5568;
+  font-weight: 600;
+}
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -131,3 +155,4 @@
 </body>
 
 </html>
+
