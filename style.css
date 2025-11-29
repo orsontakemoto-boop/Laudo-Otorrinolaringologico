@@ -1,857 +1,158 @@
-﻿:root {
-    --primary-color: #1a365d;
-    /* Deep Navy */
-    --secondary-color: #2b6cb0;
-    /* Strong Blue */
-    --accent-color: #e53e3e;
-    /* Red for actions like delete */
-    --success-color: #38a169;
-    /* Green for success/capture */
-    --text-color: #2d3748;
-    --bg-color: #edf2f7;
-    --card-bg: #ffffff;
-    --border-color: #e2e8f0;
-    --input-bg: #f7fafc;
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Lato', sans-serif;
-    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --radius: 12px;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: var(--font-body);
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    line-height: 1.6;
-    padding: 40px 20px;
-    -webkit-font-smoothing: antialiased;
-}
-
-h1,
-h2,
-h3,
-.btn,
-label,
-.report-date {
-    font-family: var(--font-heading);
-}
-
-.report-container {
-    max-width: 210mm;
-    margin: 0 auto;
-    background: var(--card-bg);
-    padding: 60px;
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--radius);
-    min-height: 297mm;
-    position: relative;
-    border: 1px solid white;
-    /* Subtle highlight */
-}
-
-/* Header - Premium & Centralized */
-.report-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 40px;
-    margin-bottom: 50px;
-}
-
-.header-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-}
-
-#clinic-logo {
-    max-height: 120px;
-    /* Larger logo */
-    width: auto;
-    object-fit: contain;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-    /* Subtle depth for logo */
-}
-
-.clinic-info h1 {
-    font-size: 32px;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
-}
-
-.clinic-info p {
-    font-size: 16px;
-    color: #4a5568;
-    margin: 4px 0;
-    font-weight: 500;
-}
-
-.report-date {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #718096;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: var(--input-bg);
-    padding: 5px 15px;
-    border-radius: 20px;
-}
-
-/* Sections */
-section {
-    margin-bottom: 50px;
-    page-break-inside: avoid;
-}
-
-h2 {
-    font-size: 16px;
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-    margin: 15px auto 0;
-    border-radius: 2px;
-}
-
-/* Forms - Modern & Clean */
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    background: #f8fafc;
-    padding: 30px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-input,
-select,
-textarea {
-    padding: 14px 18px;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 15px;
-    background-color: white;
-    transition: all 0.2s ease;
-    width: 100%;
-    color: var(--text-color);
-}
-
-input:hover,
-select:hover,
-textarea:hover {
-    border-color: #cbd5e0;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.15);
-}
-
-select {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    appearance: none;
-    -webkit-appearance: none;
-    font-weight: 500;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 200px;
-    line-height: 1.7;
-    font-size: 16px;
-}
-
-/* Exam Description Section */
-.exam-description textarea {
-    border: 2px solid var(--border-color);
-    padding: 25px;
-    background: #fff;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
-}
-
-/* Signature Section */
-.signature-section {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    text-align: center;
-    page-break-inside: avoid;
-}
-
-.signature-line {
-    width: 400px;
-    height: 2px;
-    background: var(--text-color);
-    margin: 0 auto 20px;
-}
-
-.doctor-name {
-    font-weight: 800;
-    font-size: 18px;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
-.doctor-crm {
-    font-size: 15px;
-    color: #718096;
-    font-weight: 500;
-}
-
-/* Media Capture - The "App" Feel */
-.media-capture {
-    background: white;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius);
-    padding: 40px;
-    box-shadow: var(--shadow-md);
-}
-
-.camera-controls {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-}
-
-.video-preview-container {
-    width: 100%;
-    max-width: 680px;
-    position: relative;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    background: #000;
-    /* Black bg for video area */
-    display: flex;
-    flex-direction: column;
-    /* Stack video and button */
-}
-
-video#camera-feed {
-    width: 100%;
-    display: block;
-    background: #000;
-}
-
-/* Capture Button - Prominent & Visible */
-#capture-btn {
-    width: 100%;
-    border-radius: 0;
-    /* Full width button at bottom of video */
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background-color: var(--success-color);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#capture-btn:hover {
-    background-color: #2f855a;
-}
-
-#capture-btn:active {
-    background-color: #276749;
-}
-
-.upload-controls,
-.video-upload-container {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    padding: 20px;
-    background: var(--input-bg);
-    border-radius: var(--radius);
-    border: 1px dashed var(--border-color);
-}
-
-/* Buttons */
-.btn {
-    padding: 14px 30px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: var(--shadow-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn:active {
-    transform: translateY(1px);
-    box-shadow: none;
-}
-
-.btn.primary {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-.btn.primary:hover {
-    background-color: #2c5282;
-    box-shadow: var(--shadow-md);
-}
-
-.btn.secondary {
-    background-color: white;
-    color: var(--text-color);
-    border: 2px solid var(--border-color);
-}
-
-.btn.secondary:hover {
-    background-color: #f7fafc;
-    border-color: #cbd5e0;
-    color: var(--primary-color);
-}
-
-/* Photo Grid */
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.photo-item {
-    position: relative;
-    padding: 10px;
-    background: white;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    transition: transform 0.2s;
-    border: 1px solid var(--border-color);
-}
-
-.photo-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.photo-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 6px;
-}
-
-.remove-photo {
-    position: absolute;
-    top: -12px;
-    right: -12px;
-    background: var(--accent-color);
-    color: white;
-    border: 3px solid white;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.2s;
-    z-index: 10;
-}
-
-.remove-photo:hover {
-    transform: scale(1.1);
-    background-color: #c53030;
-}
+/* header-text: substitui o layout do logo */
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 24px;
+  color: var(--primary-color, #1a365d);
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-transform: none;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #4a5568;
+  font-weight: 600;
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laudo de Exame Otorrinolaringológico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="report-container">
+        <!-- Header -->
+        <header class="report-header">
+            <div class="header-left">
+                <!-- Logo removido e substituído por texto -->
+                <div class="clinic-info header-text">
+                    <h1>Tarcísio Aguiar Linhares Filho</h1>
+                    <p>Otorrinolaringologista</p>
+                    <p>CRM 1390 — RQE 5813</p>
+                </div>
+            </div>
+            <div class="report-date">
+                <p>Data: <span id="current-date"></span></p>
+            </div>
+        </header>
+
+        <!-- Patient Info -->
+        <section class="patient-info">
+            <h2>Dados do Paciente</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="patient-name">Nome do Paciente:</label>
+                    <input type="text" id="patient-name" placeholder="Nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="patient-age">Idade:</label>
+                    <input type="number" id="patient-age" placeholder="Idade">
+                </div>
+                <div class="form-group">
+                    <label for="exam-type">Tipo de Exame:</label>
+                    <select id="exam-type">
+                        <option value="">Selecione o tipo de exame</option>
+                        <option value="video-endoscopia">Vídeo-Endoscopia Nasossinusal</option>
+                        <option value="video-naso-faringo">Vídeo-Naso-Faringo-Laringoscopia</option>
+                        <option value="video-laringoestroboscopia">Vídeo-Laringoestroboscopia</option>
+                        <option value="video-faringoscopia">Vídeo-Faringoscopia do Esfíncter Velo-Faríngeo</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exam Description -->
+        <section class="exam-description">
+            <h2>Descrição do Exame</h2>
+            <textarea id="exam-text" rows="10" placeholder="Descreva os achados do exame aqui..."></textarea>
+            <div id="exam-text-print" class="print-only"></div>
+        </section>
+
+        <!-- Signature Section -->
+        <div class="signature-section">
+            <div class="signature-line"></div>
+            <p class="doctor-name">Tarcísio Aguiar Linhares Filho</p>
+            <p class="doctor-crm">Otorrinolaringologista - CRM 1390 — RQE 5813</p>
+        </div>
+
+        <!-- Media Capture Section (Hidden in Print) -->
+        <section class="media-capture no-print">
+            <h2>Captura de Imagens e Vídeo</h2>
+
+            <div class="camera-controls">
+                <div class="video-preview-container">
+                    <video id="camera-feed" autoplay playsinline"></video>
+                    <button id="capture-btn" class="btn primary">Capturar Foto</button>
+                </div>
+
+                <div class="upload-controls">
+                    <label for="image-upload" class="btn secondary">Adicionar Imagem do Arquivo</label>
+                    <input type="file" id="image-upload" accept="image/*" multiple style="display: none;">
+                </div>
+
+                <div class="video-upload-container">
+                    <label for="youtube-link" class="input-label">Link do Vídeo (YouTube):</label>
+                    <input type="text" id="youtube-link" placeholder="Cole o link do YouTube aqui..."
+                        class="text-input">
+                </div>
+            </div>
+        </section>
+
+        <!-- Images Gallery (Visible in Print) -->
+        <section class="images-gallery">
+            <h2>Imagens do Exame</h2>
+            <div id="photo-grid" class="photo-grid">
+                <!-- Photos will be added here dynamically -->
+            </div>
+        </section>
+
+        <!-- Video Section (YouTube Embed & QR Code) -->
+        <section class="video-section" id="video-section" style="display: none;">
+            <h2>Vídeo do Exame</h2>
+            <div class="video-content">
+                <div id="video-preview" class="no-print">
+                    <!-- Iframe will be inserted here -->
+                </div>
+                <div class="qr-code-container">
+                    <p>Escaneie o QR code para assistir o vídeo:</p>
+                    <div id="qrcode"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actions (Hidden in Print) -->
+        <div class="actions no-print">
+            <button id="print-btn" class="btn primary">Imprimir / Salvar PDF</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // atualiza data atual (se já não existir outra função)
+      const dEl = document.getElementById('current-date');
+      if (dEl) dEl.textContent = new Date().toLocaleDateString('pt-BR');
+    </script>
+</body>
+
+</html>
 
-/* Video Preview */
-.video-section {
-    text-align: center;
-}
-
-.video-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    background: var(--input-bg);
-    padding: 30px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-}
-
-#uploaded-video-preview {
-    width: 100%;
-    max-width: 600px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-}
-
-/* Actions */
-.actions {
-    margin-top: 60px;
-    text-align: center;
-    padding: 30px;
-    border-top: 2px solid var(--border-color);
-    background: linear-gradient(to bottom, transparent, #f8fafc);
-    border-radius: 0 0 var(--radius) var(--radius);
-}
-
-#print-btn {
-    font-size: 18px;
-    padding: 18px 50px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-}
-
-
-.video-preview-container {
-    width: 100%;
-    max-width: 680px;
-    position: relative;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    background: #000;
-    /* Black bg for video area */
-    display: flex;
-    flex-direction: column;
-    /* Stack video and button */
-}
-
-video#camera-feed {
-    width: 100%;
-    display: block;
-    background: #000;
-}
-
-/* Capture Button - Prominent & Visible */
-#capture-btn {
-    width: 100%;
-    border-radius: 0;
-    /* Full width button at bottom of video */
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background-color: var(--success-color);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#capture-btn:hover {
-    background-color: #2f855a;
-}
-
-#capture-btn:active {
-    background-color: #276749;
-}
-
-.upload-controls,
-.video-upload-container {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    padding: 20px;
-    background: var(--input-bg);
-    border-radius: var(--radius);
-    border: 1px dashed var(--border-color);
-}
-
-/* Buttons */
-.btn {
-    padding: 14px 30px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: var(--shadow-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn:active {
-    transform: translateY(1px);
-    box-shadow: none;
-}
-
-.btn.primary {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-.btn.primary:hover {
-    background-color: #2c5282;
-    box-shadow: var(--shadow-md);
-}
-
-.btn.secondary {
-    background-color: white;
-    color: var(--text-color);
-    border: 2px solid var(--border-color);
-}
-
-.btn.secondary:hover {
-    background-color: #f7fafc;
-    border-color: #cbd5e0;
-    color: var(--primary-color);
-}
-
-/* Photo Grid */
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.photo-item {
-    position: relative;
-    padding: 10px;
-    background: white;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    transition: transform 0.2s;
-    border: 1px solid var(--border-color);
-}
-
-.photo-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.photo-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 6px;
-}
-
-.remove-photo {
-    position: absolute;
-    top: -12px;
-    right: -12px;
-    background: var(--accent-color);
-    color: white;
-    border: 3px solid white;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.2s;
-    z-index: 10;
-}
-
-.remove-photo:hover {
-    transform: scale(1.1);
-    background-color: #c53030;
-}
-
-/* Video Preview */
-.video-section {
-    text-align: center;
-}
-
-.video-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    background: var(--input-bg);
-    padding: 30px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-}
-
-#uploaded-video-preview {
-    width: 100%;
-    max-width: 600px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-}
-
-/* Actions */
-.actions {
-    margin-top: 60px;
-    text-align: center;
-    padding: 30px;
-    border-top: 2px solid var(--border-color);
-    background: linear-gradient(to bottom, transparent, #f8fafc);
-    border-radius: 0 0 var(--radius) var(--radius);
-}
-
-#print-btn {
-    font-size: 18px;
-    padding: 18px 50px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-}
-
-#print-btn:hover {
-    filter: brightness(1.1);
-}
-
-/* Print Styles - Clean & Professional */
-
-/* Hide print-only elements on screen */
-.print-only {
-    display: none !important;
-}
-
-.no-screen {
-    display: none;
-}
-
-/* Print Styles - Clean & Professional */
-@media print {
-    body {
-        background: white;
-        padding: 0;
-        font-size: 10pt;
-    }
-
-    .report-container {
-        box-shadow: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        max-width: none;
-        border: none;
-        border-radius: 0;
-    }
-
-    .no-print {
-        display: none !important;
-    }
-
-    .remove-photo {
-        display: none !important;
-    }
-
-    input {
-        border: none;
-        padding: 0;
-        background: transparent;
-        font-weight: bold;
-        font-size: 10pt;
-    }
-
-    select {
-        border: none;
-        padding: 0;
-        background: transparent;
-        appearance: none;
-        font-weight: bold;
-        font-size: 10pt;
-    }
-
-    textarea {
-        display: none !important;
-    }
-
-    .print-only {
-        display: block !important;
-        white-space: pre-wrap;
-        font-family: var(--font-body) !important;
-        font-size: 10pt;
-        line-height: 1.3;
-        color: black;
-        text-align: justify;
-        margin-top: 5px;
-    }
-
-    h2 {
-        border-bottom: 1px solid #000;
-        color: #000;
-        margin-bottom: 10px;
-        text-align: left;
-        padding-bottom: 2px;
-        font-size: 12pt;
-    }
-
-    h2::after {
-        display: none;
-    }
-
-    .report-header {
-        border-bottom: 1px solid #000;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .report-header, .header-left {
-        text-align: center;
-        align-items: center;
-    }
-
-    #clinic-logo {
-        max-height: 50px;
-        filter: none;
-        margin-bottom: 5px;
-    }
-
-    .clinic-info h1 {
-        font-size: 18pt;
-        margin-bottom: 2px;
-    }
-
-    .clinic-info p {
-        font-size: 9pt;
-        margin: 0;
-    }
-
-    .report-date {
-        margin-top: 5px;
-        font-size: 9pt;
-        padding: 0;
-        background: none;
-    }
-
-    section {
-        margin-bottom: 15px;
-    }
-
-    .form-grid {
-        background: none;
-        padding: 0;
-        gap: 10px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        border: none;
-    }
-
-    .form-group {
-        margin-bottom: 5px;
-    }
-
-    label {
-        color: #000;
-        margin-bottom: 0;
-        font-size: 9pt;
-    }
-
-    .signature-section {
-        margin-top: 30px;
-        margin-bottom: 0;
-    }
-
-    .signature-line {
-        background: #000;
-        width: 250px;
-    }
-
-    .doctor-name {
-        font-size: 11pt;
-    }
-
-    .doctor-crm {
-        font-size: 9pt;
-    }
-
-    .qr-code-container {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        page-break-inside: avoid;
-        margin-top: 10px;
-        border: 1px solid #eee;
-        padding: 10px;
-        border-radius: 8px;
-    }
-
-    .qr-code-container p {
-        display: block !important;
-        font-size: 10pt;
-        margin: 0;
-        font-weight: bold;
-    }
-
-    #video-preview {
-        display: none !important;
-    }
-
-    .photo-grid {
-        display: flex !important;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .photo-item {
-        box-shadow: none;
-        border: 1px solid #ccc;
-        padding: 2px;
-        width: 180px;
-        height: auto;
-    }
-}

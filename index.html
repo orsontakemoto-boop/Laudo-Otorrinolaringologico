@@ -19,11 +19,11 @@
         <!-- Header -->
         <header class="report-header">
             <div class="header-left">
-                <img src="logo.jpg" id="clinic-logo" alt="Logotipo da Clínica">
-                <div class="clinic-info">
-                    <h1>Audioclínica.Gem</h1>
-                    <p>Dr. Orson Norio Takemoto</p>
-                    <p>CRM: 13.716 PR | RQE: 7045</p>
+                <!-- Logo removido e substituído por texto -->
+                <div class="clinic-info header-text">
+                    <h1>Tarcísio Aguiar Linhares Filho</h1>
+                    <p>Otorrinolaringologista</p>
+                    <p>CRM 1390 — RQE 5813</p>
                 </div>
             </div>
             <div class="report-date">
@@ -63,11 +63,11 @@
             <div id="exam-text-print" class="print-only"></div>
         </section>
 
-        <!-- Signature Section (Repositioned) -->
+        <!-- Signature Section -->
         <div class="signature-section">
             <div class="signature-line"></div>
-            <p class="doctor-name">Dr. Orson Norio Takemoto</p>
-            <p class="doctor-crm">Otorrinolaringologista - CRM/UF: 13.716 PR</p>
+            <p class="doctor-name">Tarcísio Aguiar Linhares Filho</p>
+            <p class="doctor-crm">Otorrinolaringologista - CRM 1390 — RQE 5813</p>
         </div>
 
         <!-- Media Capture Section (Hidden in Print) -->
@@ -123,6 +123,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
+    <script>
+      // atualiza data atual (se já não existir outra função)
+      const dEl = document.getElementById('current-date');
+      if (dEl) dEl.textContent = new Date().toLocaleDateString('pt-BR');
+    </script>
 </body>
 
 </html>
+
